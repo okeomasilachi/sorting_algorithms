@@ -86,13 +86,6 @@ void quick_sort(int *array, size_t size)
 
 	if (size < 2)
 	{
-		file = fopen("3-O", "w");
-		fputs("n * log(n)\nn * log(n)\nn square\n", file);
-		fclose(file);
 		return;
 	}
-	sort_recursive(array, 0, size - 1, size);
-	file = fopen("3-O", "w");
-	fputs("n * log(n)\nn * log(n)\nn square\n", file);
-	fclose(file);
 }

@@ -17,9 +17,6 @@ void selection_sort(int *array, size_t size)
 
 	if (!array || !array[1])
 	{
-		file = fopen("2-O", "w");
-		fputs("n square\nn square\nn square\n", file);
-		fclose(file);
 		return;
 	}
 	for (i = 0; i < (size - 1); i++)
@@ -39,7 +36,4 @@ void selection_sort(int *array, size_t size)
 			print_array(array, size);
 		}
 	}
-	file = fopen("2-O", "w");
-	fputs("n square\nn square\nn square\n", file);
-	fclose(file);
 }

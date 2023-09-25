@@ -18,9 +18,6 @@ void bubble_sort(int *array, size_t size)
 
 	if (array[0] == '\0' || !array[0])
 	{
-		file = fopen("0-O", "w");
-		fputs("O(n)\nn square\nn square\n", file);
-		fclose(file);
 		return;
 	}
 
@@ -40,7 +37,4 @@ void bubble_sort(int *array, size_t size)
 		if (sorted == false)
 			break;
 	}
-	file = fopen("0-O", "w");
-	fputs("O(n)\nn square\nn square\n", file);
-	fclose(file);
 }
