@@ -12,13 +12,16 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t pos, i, j;
+	FILE *file = NULL;
+	int tmp;
 
 	if (!array || !array[1])
 	{
-		message("2-O", "n square\nn square\nn square\n");
+		file = fopen("2-O", "w");
+		fputs("n square\nn square\nn square\n", file);
+		fclose(file);
 		return;
 	}
-
 	for (i = 0; i < (size - 1); i++)
 	{
 		pos = i;
@@ -29,9 +32,14 @@ void selection_sort(int *array, size_t size)
 		}
 		if (pos != i)
 		{
-			swap(array, i, pos);
+			/* swap(array, i, pos); */
+			tmp = array[i];
+			array[i] = array[pos];
+			array[pos] = tmp;
 			print_array(array, size);
 		}
 	}
-	message("2-O", "n square\nn square\nn square\n");
+	file = fopen("2-O", "w");
+	fputs("n square\nn square\nn square\n", file);
+	fclose(file);
 }

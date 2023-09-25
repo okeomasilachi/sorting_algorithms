@@ -11,14 +11,16 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *fst = NULL, *tmp = NULL;
+	FILE *file = NULL;
 
 
 	if (*list == NULL || (*list)->next == NULL)
 	{
-		message("1-O", "O(n)\nn square\nn square\n");
+		file = fopen("1-O", "w");
+		fputs("O(n)\nn square\nn square\n", file);
+		fclose(file);
 		return;
 	}
-
 	for (fst = (*list)->next; fst; fst = fst->next)
 	{
 		tmp = fst;
@@ -37,5 +39,7 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 		}
 	}
-	message("1-O", "O(n)\nn square\nn square\n");
+	file = fopen("1-O", "w");
+	fputs("O(n)\nn square\nn square\n", file);
+	fclose(file);
 }

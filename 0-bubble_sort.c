@@ -13,10 +13,14 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 	bool sorted = false;
+	int tmp;
+	FILE *file = NULL;
 
 	if (array[0] == '\0' || !array[0])
 	{
-		message("0-O", "O(n)\nn square\nn square\n");
+		file = fopen("0-O", "w");
+		fputs("O(n)\nn square\nn square\n", file);
+		fclose(file);
 		return;
 	}
 
@@ -27,14 +31,16 @@ void bubble_sort(int *array, size_t size)
 			if (array[j] > array[j + 1])
 			{
 				sorted = true;
-				swap(array, j, (j + 1));
+				tmp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = tmp;
 				print_array(array, size);
 			}
 		}
 		if (sorted == false)
-		{
 			break;
-		}
 	}
-	message("0-O", "O(n)\nn square\nn square\n");
+	file = fopen("0-O", "w");
+	fputs("O(n)\nn square\nn square\n", file);
+	fclose(file);
 }

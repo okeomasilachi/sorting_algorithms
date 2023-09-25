@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 typedef unsigned int num;
 
@@ -27,9 +28,7 @@ void swap(int *array, size_t num1, size_t num2);
 void bubble_sort(int *array, size_t size);
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
-listint_t *create_listint(const int *array, size_t size);
 void insertion_sort_list(listint_t **list);
-void message(const char *filename, const char *message);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 size_t partiton(int *arr, int small_val, int big_val, size_t size);

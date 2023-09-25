@@ -1,6 +1,25 @@
 #include "sort.h"
 
 /**
+ * swap - swaps the values of two elements in an array.
+ *
+ * @array: A pointer to an array of integers.
+ * @num1: The index of the first element in the array that needs to be swapped.
+ * @num2: The parameter "num2" is the index of the second
+ *			element in the array that we want to swap.
+ *
+ * Return: Void
+ */
+void swap(int *array, size_t num1, size_t num2)
+{
+	int tmp;
+
+	tmp = array[num1];
+	array[num1] = array[num2];
+	array[num2] = tmp;
+}
+
+/**
  * partiton - takes an array, a range of indices, and a pivot value,
  *				and rearranges the elements in the array
  * @arr: An array of integers that needs to be partitioned.
@@ -63,11 +82,17 @@ void sort_recursive(int *array, int small_val, int big_val, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
+	FILE *file = NULL;
+
 	if (size < 2)
 	{
-		message("3-O", "n * log(n)\nn * log(n)\nn square\n");
+		file = fopen("3-O", "w");
+		fputs("n * log(n)\nn * log(n)\nn square\n", file);
+		fclose(file);
 		return;
 	}
 	sort_recursive(array, 0, size - 1, size);
-	message("3-O", "n * log(n)\nn * log(n)\nn square\n");
+	file = fopen("3-O", "w");
+	fputs("n * log(n)\nn * log(n)\nn square\n", file);
+	fclose(file);
 }
