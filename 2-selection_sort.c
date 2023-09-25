@@ -12,7 +12,6 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t pos, i, j;
-	FILE *file = NULL;
 	int tmp;
 
 	if (!array || !array[1])
@@ -29,7 +28,6 @@ void selection_sort(int *array, size_t size)
 		}
 		if (pos != i)
 		{
-			/* swap(array, i, pos); */
 			tmp = array[i];
 			array[i] = array[pos];
 			array[pos] = tmp;

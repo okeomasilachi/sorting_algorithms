@@ -11,8 +11,6 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *fst = NULL, *tmp = NULL;
-	FILE *file = NULL;
-
 
 	if (*list == NULL || (*list)->next == NULL)
 	{

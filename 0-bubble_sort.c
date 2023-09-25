@@ -14,7 +14,6 @@ void bubble_sort(int *array, size_t size)
 	size_t i, j;
 	bool sorted = false;
 	int tmp;
-	FILE *file = NULL;
 
 	if (array[0] == '\0' || !array[0])
 	{
