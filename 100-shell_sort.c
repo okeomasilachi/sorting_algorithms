@@ -1,6 +1,12 @@
 #include "sort.h"
 
-
+/**
+* shell_sort - shell sort alglorithm using Knuth Sequence
+* @array: array to sort
+* @size: size of array
+*
+* Return: 0
+*/
 void shell_sort(int *array, size_t size)
 {
 	size_t gap, i, j;
