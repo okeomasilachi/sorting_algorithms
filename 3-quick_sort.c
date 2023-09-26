@@ -82,9 +82,12 @@ void sort_recursive(int *array, int small_val, int big_val, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size < 2)
-	{
+	/* int k = (int)size; */
+
+	if ((int)size < 0)
 		return;
-	}
+	if (array == NULL || size < 2 || array[0] == '\0')
+		return;
+
 	sort_recursive(array, 0, size - 1, size);
 }
